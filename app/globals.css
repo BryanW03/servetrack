@@ -1,26 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Design tokens agreed on for the ServeTrack project:
+   - Primary: teal (#0f766e) — trust, community, calm
+   - Accent: warm orange (#f97316) — energy, action, call-to-action
+   - Neutral: slate scale for text and backgrounds
+   - Display font: Poppins (headings) / Body font: Inter */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.font-display {
+  font-family: var(--font-poppins), Georgia, sans-serif;
 }
