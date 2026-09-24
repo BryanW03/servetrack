@@ -1,8 +1,8 @@
 import VolunteerCard from '@/components/VolunteerCard';
 import { getVolunteers } from '@/lib/data';
 
-export default function VolunteersPage() {
-  const volunteers = getVolunteers();
+export default async function VolunteersPage() {
+  const volunteers = await getVolunteers();
 
   return (
     <section className="max-w-2xl mx-auto px-6 py-10">
