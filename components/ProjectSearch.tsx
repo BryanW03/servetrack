@@ -2,13 +2,14 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
+// Search box that keeps its value in the URL (?query=...).
 export default function ProjectSearch() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const term = e.target.value;
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const term = event.target.value;
     const params = new URLSearchParams(searchParams);
 
     if (term) {
@@ -22,12 +23,12 @@ export default function ProjectSearch() {
 
   return (
     <input
-      type="text"
+      type="search"
       aria-label="Search projects by title or location"
       placeholder="Search by title or location..."
       defaultValue={searchParams.get('query')?.toString()}
       onChange={handleChange}
-      className="w-full border border-slate-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-[#0f766e] mb-6"
+      className="mb-6 w-full rounded-lg border border-slate-500 bg-white px-4 py-2 text-sm text-slate-900 placeholder:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-800"
     />
   );
 }

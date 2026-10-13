@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 text-slate-500 text-xs text-center py-5 mt-12">
+    <footer className="mt-12 border-t border-slate-300 py-5 text-center text-xs text-slate-600">
       <p>ServeTrack &middot; {new Date().getFullYear()}</p>
     </footer>
   );
